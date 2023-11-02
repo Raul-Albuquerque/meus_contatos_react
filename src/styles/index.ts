@@ -16,12 +16,21 @@ const EstiloGlobal = createGlobalStyle`
 `
 
 export const Container = styled.div`
-  max-width: 960px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 40px;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    grid-template-columns: 1fr;
+  }
 `
 export const ContentContainer = styled.div`
   background-color: ${variaveis.white};
@@ -31,6 +40,11 @@ export const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
 `
 
 export const Title = styled.h1`

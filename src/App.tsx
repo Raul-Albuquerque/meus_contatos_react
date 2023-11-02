@@ -3,6 +3,7 @@ import Header from './containers/Header'
 import { Container } from './styles/index'
 import ContactList from './containers/ContactList'
 import Form from './containers/Form'
+import Footer from './containers/Footer'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <ContactList></ContactList>
         <Form />
       </Container>
+      <Footer />
     </>
   )
 }

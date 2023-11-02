@@ -11,5 +11,11 @@ export const Button = styled.button`
   border-color: transparent;
   text-transform: uppercase;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 6px;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
 `
