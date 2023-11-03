@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
-import { Title } from '../../styles'
 import { Button as btn } from '../Button/style'
 
 export const ContactContainer = styled.div`
@@ -10,12 +9,12 @@ export const ContactContainer = styled.div`
   border-radius: 6px;
   margin-bottom: 20px;
 `
-export const ContactInfo = styled.div`
+export const ContactInfos = styled.div`
   display: flex;
-  align-items: end;
+  align-items: center;
   width: 100%;
   border-bottom: 2px solid ${variaveis.white};
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 `
 export const ContactAvatar = styled.img`
@@ -23,10 +22,15 @@ export const ContactAvatar = styled.img`
   width: 40px;
 `
 
-export const ContactName = styled(Title)`
+export const ContactName = styled.textarea`
   font-size: 12px;
-  line-height: 18px;
+  height: 40px;
+  padding-top: 10px;
+  width: 100%;
   color: ${variaveis.black};
+  resize: none;
+  border: none;
+  background-color: transparent;
   padding-left: 8px;
 `
 export const ContactDatas = styled.div`
@@ -41,19 +45,32 @@ export const ContactDatas = styled.div`
 `
 export const ContactData = styled.div`
   width: 50%;
-  p {
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  label {
     font-size: 12px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 10px;
-    }
-
-    span {
-      font-family: 'Inter', sans-serif;
-      color: ${variaveis.black};
-    }
+    display: block;
   }
 `
+
+export const ContactInfo = styled.textarea`
+  font-size: 12px;
+  line-height: 12px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  color: ${variaveis.black};
+  resize: none;
+  border: none;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+`
+
 export const ButtonContainer = styled.div`
   width: 50%;
   display: flex;
@@ -79,4 +96,11 @@ export const Button = styled(btn)`
     width: 50%;
     margin-top: 10px;
   }
+`
+
+export const SaveButton = styled(Button)`
+  background-color: ${variaveis.green};
+`
+export const CancelRemoveButton = styled(Button)`
+  background-color: ${variaveis.red};
 `

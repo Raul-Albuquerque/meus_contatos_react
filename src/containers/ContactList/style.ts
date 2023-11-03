@@ -26,7 +26,7 @@ export const ContentContainer = styled.div`
     height: 50vh;
   }
 `
-export const ContactContainer = styled.div`
+export const ContactContainer = styled.ul`
   overflow-y: scroll;
   height: 90%;
 `

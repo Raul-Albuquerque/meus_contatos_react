@@ -1,19 +1,38 @@
+import { useSelector } from 'react-redux'
+
 import * as S from './style'
 import { SectionTitle } from '../../styles'
 import Contact from '../../components/Contact'
+import { RootReducer } from '../../store'
 
-const ContactList = () => (
-  <S.ContentContainer>
-    <S.TitleContainer>
-      <SectionTitle>Lista de contatos</SectionTitle>
-      <S.Counter>Total: 4 contatos.</S.Counter>
-    </S.TitleContainer>
-    <S.ContactContainer>
-      <Contact />
-      <Contact />
-      <Contact />
-    </S.ContactContainer>
-  </S.ContentContainer>
-)
+export type Props = {
+  contador: number
+}
+
+const ContactList = ({ contador }: Props) => {
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+
+  return (
+    <S.ContentContainer>
+      <S.TitleContainer>
+        <SectionTitle>Lista de contatos</SectionTitle>
+        <S.Counter>{`Total: ${contador} contatos.`}</S.Counter>
+      </S.TitleContainer>
+      <S.ContactContainer>
+        {itens.map((t) => (
+          <li key={t.name}>
+            <Contact
+              id={t.id}
+              isABoy={t.isABoy}
+              name={t.name}
+              phone={t.phone}
+              email={t.email}
+            />
+          </li>
+        ))}
+      </S.ContactContainer>
+    </S.ContentContainer>
+  )
+}
 
 export default ContactList
