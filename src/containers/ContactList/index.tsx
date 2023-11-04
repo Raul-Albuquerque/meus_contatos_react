@@ -9,7 +9,7 @@ export type Props = {
   contador: number
 }
 
-const ContactList = ({ contador }: Props) => {
+const ContactList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
 
   return (
