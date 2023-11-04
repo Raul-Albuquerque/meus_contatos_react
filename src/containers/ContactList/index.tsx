@@ -16,7 +16,7 @@ const ContactList = ({ contador }: Props) => {
     <S.ContentContainer>
       <S.TitleContainer>
         <SectionTitle>Lista de contatos</SectionTitle>
-        <S.Counter>{`Total: ${contador} contatos.`}</S.Counter>
+        <S.Counter>{`Total: ${itens.length} contatos.`}</S.Counter>
       </S.TitleContainer>
       <S.ContactContainer>
         {itens.map((t) => (
