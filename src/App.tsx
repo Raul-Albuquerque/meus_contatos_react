@@ -14,7 +14,7 @@ function App() {
       <EstiloGlobal />
       <Header />
       <Container>
-        <ContactList contador={4} />
+        <ContactList />
         <Form />
       </Container>
       <Footer />
